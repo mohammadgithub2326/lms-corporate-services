@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LMS Premium Manpower Solutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4AF37',
+                        secondary: '#000000'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(0,0,0,0.9));
+            border: 1px solid rgba(212,175,55,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 10px 30px rgba(212,175,55,0.2);
+        }
+        
+        .form-success {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 0, 0, 0.9));
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .map-container {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(0,0,0,0.9)), url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(212,175,55,0.3);
+        }
+    </style>
+</head>
+<body class="bg-secondary text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-secondary/95 backdrop-blur-sm z-50 border-b border-primary/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center">
+    <a>
+        <!-- <img class="w-10 h-10 rounded-full" src="https://example.com/avatar.jpg" alt="Avatar"> -->
+        <div class="text-2xl font-['Pacifico'] text-primary">LMS</div>
+    </a>
+</div>
+<div class="hidden md:block">
+<div class="ml-10 flex items-baseline space-x-8">
+<a href="index.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Home</a>
+<a href="about-Us.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">About Us</a>
+<a href="services.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Services</a>
+<a href="gallery.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Gallery</a>
+<a href="careers.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Careers</a>
+<!-- <a href="client-gallery.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Clients</a> -->
+<a href="contact-Us.html" class="text-primary border-b-2 border-primary px-3 py-2">Contact</a>
+</div>
+</div>
+<div class="hidden md:block">
+<button onclick="window.location.href='contact-Us.html'"
+class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-secondary transition-all duration-300 px-6 py-2 !rounded-button whitespace-nowrap">
+Get Quote
+</button>
+</div>
+<div class="md:hidden">
+<button id="mobileMenuBtn" class="text-white hover:text-primary transition-colors duration-300">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-secondary border-l border-primary/20 md:hidden">
+<div class="p-4">
+<button id="closeMobileMenu" class="text-white hover:text-primary transition-colors duration-300 mb-8">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-close-line ri-lg"></i>
+</div>
+</button>
+<div class="space-y-4">
+<a href="index.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">Home</a>
+<a href="about-Us.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">About Us</a>
+<a href="services.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">Services</a>
+<a href="gallery.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">Gallery</a>
+<a href="careers.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">Careers</a>
+<a href="contact-Us.html" class="block text-primary py-2">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-b from-secondary to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Contact <span class="text-primary">Us</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Ready to transform your workforce? Get in touch with our team of experts to discuss your manpower outsourcing needs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="py-12 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="contact-card p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-full mx-auto mb-4">
+                        <i class="ri-map-pin-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Visit Our Office</h3>
+                    <p class="text-gray-300 text-sm">123 Business Plaza, Suite 500<br>Penukondda, NY 10001</p>
+                </div>
+                
+                <div class="contact-card p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-full mx-auto mb-4">
+                        <i class="ri-phone-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Call Us</h3>
+                    <p class="text-gray-300 text-sm">+1 (555) 123-4567<br>+1 (555) 123-4568</p>
+                </div>
+                
+                <div class="contact-card p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-full mx-auto mb-4">
+                        <i class="ri-mail-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Email Us</h3>
+                    <p class="text-gray-300 text-sm">info@lms-solutions.com<br>support@lms-solutions.com</p>
+                </div>
+                
+                <div class="contact-card p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-full mx-auto mb-4">
+                        <i class="ri-time-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Business Hours</h3>
+                    <p class="text-gray-300 text-sm">Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Get In <span class="text-primary">Touch</span>
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        We're here to help you find the perfect manpower solutions for your business. Our team of experts is ready to discuss your specific requirements and provide customized solutions.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 flex items-center justify-center text-primary mr-4 mt-1">
+                                <i class="ri-map-pin-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Headquarters</h4>
+                                <p class="text-gray-300 mb-2">123 Business Plaza, Suite 500<br>New York, NY 10001, United States</p>
+                                <p class="text-sm text-gray-400">Located in the heart of Manhattan's business district</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 flex items-center justify-center text-primary mr-4 mt-1">
+                                <i class="ri-phone-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Phone Numbers</h4>
+                                <p class="text-gray-300 mb-1">Main: +1 (555) 123-4567</p>
+                                <p class="text-gray-300 mb-1">Support: +1 (555) 123-4568</p>
+                                <p class="text-gray-300 mb-2">Toll-Free: 1-800-LMS-HELP</p>
+                                <p class="text-sm text-gray-400">Available during business hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 flex items-center justify-center text-primary mr-4 mt-1">
+                                <i class="ri-mail-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Email Addresses</h4>
+                                <p class="text-gray-300 mb-1">General: info@lms-solutions.com</p>
+                                <p class="text-gray-300 mb-1">Support: support@lms-solutions.com</p>
+                                <p class="text-gray-300 mb-1">Careers: careers@lms-solutions.com</p>
+                                <p class="text-gray-300 mb-2">Sales: sales@lms-solutions.com</p>
+                                <p class="text-sm text-gray-400">We respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 flex items-center justify-center text-primary mr-4 mt-1">
+                                <i class="ri-time-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Business Hours</h4>
+                                <p class="text-gray-300 mb-1">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                                <p class="text-gray-300 mb-1">Saturday: 10:00 AM - 4:00 PM EST</p>
+                                <p class="text-gray-300 mb-2">Sunday: Closed</p>
+                                <p class="text-sm text-gray-400">Emergency support available 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="mt-12">
+                        <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://facebook.com" class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full text-primary hover:bg-primary hover:text-secondary transition-all duration-300">
+                                <i class="ri-facebook-fill ri-lg"></i>
+                            </a>
+                            <a href="https://twitter.com" class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full text-primary hover:bg-primary hover:text-secondary transition-all duration-300">
+                                <i class="ri-twitter-fill ri-lg"></i>
+                            </a>
+                            <a href="https://linkedin.com" class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full text-primary hover:bg-primary hover:text-secondary transition-all duration-300">
+                                <i class="ri-linkedin-fill ri-lg"></i>
+                            </a>
+                            <a href="https://instagram.com" class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full text-primary hover:bg-primary hover:text-secondary transition-all duration-300">
+                                <i class="ri-instagram-fill ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-gray-900 p-8 h-fit rounded-lg border border-primary/30">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    
+                    <form id="contactForm" action="/contact" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium mb-2">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="John">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium mb-2">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="Smith">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="john.smith@company.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" required name="phone" class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="+1 (555) 123-4567">
+                        </div>
+<!--                         
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject *</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="Inquiry about manpower solutions">
+                        </div> -->
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300 resize-none" placeholder="Tell us about your requirements, project scope, timeline, and any specific needs you have..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="newsletter" name="newsletter" type="checkbox" class="w-4 h-4 text-primary bg-gray-800 border-primary/30 rounded focus:ring-primary focus:ring-2">
+                            </div>
+                            <div class="ml-3">
+                                <label for="newsletter" class="text-sm text-gray-300">
+                                    Subscribe to our newsletter for industry insights and updates
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-8 py-4 !rounded-button font-semibold whitespace-nowrap">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="successMessage" class="form-success p-4 rounded-lg mt-6 hidden">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center text-green-400 mr-3">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-green-400">Message Sent Successfully!</h4>
+                                <p class="text-sm text-gray-300">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Find <span class="text-primary">Us</span>
+                </h2>
+                <p class="text-lg text-gray-300">
+                    Visit our headquarters in the heart of royal sema's business district
+                </p>
+            </div>
+            
+            <div class="map-container rounded-lg overflow-hidden h-96 relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.876191839628!2d77.59477207491153!3d14.084485089504486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb173085908c995%3A0xda874b76d56e7ba7!2sLMS%20Corporate%20Service%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1756033850478!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <!-- <div class="bg-secondary/90 p-6 rounded-lg text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-full mx-auto mb-4">
+                            <i class="ri-map-pin-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">LMS Headquarters</h3>
+                        <p class="text-gray-300 mb-4">123 Business Plaza, Suite 500<br>penukonda, NY 10001</p>
+                        <button onclick="window.location.href=''" class="bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-6 py-2 !rounded-button font-semibold whitespace-nowrap">
+                            Get Directions
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-secondary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Frequently Asked <span class="text-primary">Questions</span>
+                </h2>
+                <p class="text-lg text-gray-300">
+                    Find answers to common questions about our services and processes
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="faq-item border border-primary/30 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left bg-gray-900 hover:bg-gray-800 transition-colors duration-300 flex items-center justify-between">
+                        <span class="font-semibold">What types of manpower solutions do you provide?</span>
+                        <div class="w-6 h-6 flex items-center justify-center text-primary">
+                            <i class="ri-add-line faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 py-4 bg-gray-800/50 hidden">
+                        <p class="text-gray-300">
+                            We offer comprehensive manpower solutions including staff augmentation, project outsourcing, talent acquisition, training & development, HR consulting, and compliance management. Our services are tailored to meet the specific needs of businesses across various industries.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item border border-primary/30 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left bg-gray-900 hover:bg-gray-800 transition-colors duration-300 flex items-center justify-between">
+                        <span class="font-semibold">How quickly can you provide qualified candidates?</span>
+                        <div class="w-6 h-6 flex items-center justify-center text-primary">
+                            <i class="ri-add-line faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 py-4 bg-gray-800/50 hidden">
+                        <p class="text-gray-300">
+                            Our response time varies depending on the complexity and requirements of the position. For standard roles, we can typically provide qualified candidates within 48-72 hours. For specialized or senior positions, the process may take 1-2 weeks to ensure the best match.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item border border-primary/30 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left bg-gray-900 hover:bg-gray-800 transition-colors duration-300 flex items-center justify-between">
+                        <span class="font-semibold">What industries do you serve?</span>
+                        <div class="w-6 h-6 flex items-center justify-center text-primary">
+                            <i class="ri-add-line faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 py-4 bg-gray-800/50 hidden">
+                        <p class="text-gray-300">
+                            We serve a wide range of industries including technology, healthcare, finance, manufacturing, retail, construction, hospitality, and professional services. Our diverse talent pool and industry expertise allow us to meet the unique requirements of each sector.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item border border-primary/30 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left bg-gray-900 hover:bg-gray-800 transition-colors duration-300 flex items-center justify-between">
+                        <span class="font-semibold">Do you provide training for the staff you place?</span>
+                        <div class="w-6 h-6 flex items-center justify-center text-primary">
+                            <i class="ri-add-line faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 py-4 bg-gray-800/50 hidden">
+                        <p class="text-gray-300">
+                            Yes, we offer comprehensive training and development programs. This includes onboarding training, skill enhancement programs, compliance training, and ongoing professional development to ensure our placed staff meet and exceed your expectations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item border border-primary/30 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full px-6 py-4 text-left bg-gray-900 hover:bg-gray-800 transition-colors duration-300 flex items-center justify-between">
+                        <span class="font-semibold">What are your pricing models?</span>
+                        <div class="w-6 h-6 flex items-center justify-center text-primary">
+                            <i class="ri-add-line faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 py-4 bg-gray-800/50 hidden">
+                        <p class="text-gray-300">
+                            We offer flexible pricing models including hourly rates, project-based pricing, and retainer agreements. Our pricing is competitive and transparent, with no hidden fees. We work with you to find a pricing structure that fits your budget and requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer class="bg-gray-900 border-t border-primary/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-['Pacifico'] text-primary mb-4">LMS</div>
+                    <p class="text-gray-300 mb-6">
+                        Leading the future of manpower outsourcing with innovative solutions and exceptional service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://twitter.com" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-twitter-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="services/staff-Augmentation.html" class="hover:text-primary transition-colors duration-300">Staff Augmentation</a></li>
+                        <li><a href="services/ProjectOutsourcing.html" class="hover:text-primary transition-colors duration-300">Project Outsourcing</a></li>
+                        <li><a href="services//TalentAcquisition.html" class="hover:text-primary transition-colors duration-300">Talent Acquisition</a></li>
+                        <li><a href="services/hr-Consulting.html" class="hover:text-primary transition-colors duration-300">HR Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="about-Us.html" class="hover:text-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-primary transition-colors duration-300">Careers</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact-Us.html" class="hover:text-primary transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>123 Business Plaza, Suite 500</p>
+                        <p>penukonnda, NY 10001</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Email: info@lms-solutions.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary/20 mt-8 pt-8 text-center text-gray-400">
+<p class="text-gray-400 text-sm">
+© <span id="current-year">2024</span> LMS Corporate Services. All rights reserved.
+</p>           </div>
+        </div>
+    </footer>
+
+    <script id="navigation-mobile">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+            });
+            
+            closeMobileMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+            
+            const mobileNavLinks = mobileMenu.querySelectorAll('a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+    <script id="contact-form">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                
+                setTimeout(() => {
+                    successMessage.classList.remove('hidden');
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 5000);
+                }, 500);
+            });
+        });
+    </script>
+
+    <script id="faq-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                
+                question.addEventListener('click', function() {
+                    const isOpen = !answer.classList.contains('hidden');
+                    
+                    faqItems.forEach(otherItem => {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.faq-icon');
+                        otherAnswer.classList.add('hidden');
+                        otherIcon.classList.remove('ri-subtract-line');
+                        otherIcon.classList.add('ri-add-line');
+                    });
+                    
+                    if (!isOpen) {
+                        answer.classList.remove('hidden');
+                        icon.classList.remove('ri-add-line');
+                        icon.classList.add('ri-subtract-line');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="current-year">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS - Premium Manpower Outsourcing Solutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D4AF37',
+                        secondary: '#000000'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+      :where([class^="ri-"])::before {
+          content: "\f3c2";
+      }
+
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+
+      .splash-screen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #000000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          opacity: 1;
+          transition: opacity 0.5s ease-out;
+      }
+
+      .splash-screen.fade-out {
+          opacity: 0;
+          pointer-events: none;
+      }
+
+      .logo-animation {
+          animation: logoFadeIn 2s ease-in-out;
+      }
+
+      @keyframes logoFadeIn {
+          0% { opacity: 0; transform: scale(0.8); }
+          100% { opacity: 1; transform: scale(1); }
+      }
+
+      .typing-animation {
+          border-right: 2px solid #D4AF37;
+          animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+          0%, 50% { border-color: #D4AF37; }
+          51%, 100% { border-color: transparent; }
+      }
+
+      .ticker-scroll {
+          animation: scroll 30s linear infinite;
+      }
+
+      @keyframes scroll {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+      }
+
+      .ticker-scroll:hover {
+          animation-play-state: paused;
+      }
+
+      .hero-bg {
+          background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(212,175,55,0.1)), url('https://readdy.ai/api/search-image?query=professional%20corporate%20office%20environment%20with%20modern%20business%20people%20in%20suits%20working%20together%20in%20a%20luxurious%20black%20and%20gold%20themed%20office%20space%20with%20elegant%20lighting%20and%20premium%20furniture&width=1920&height=1080&seq=hero-bg&orientation=landscape');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+      }
+
+      .parallax {
+          transform: translateY(var(--scroll-y, 0));
+      }
+
+      .counter {
+          font-variant-numeric: tabular-nums;
+      }
+
+      .service-card {
+          transition: all 0.3s ease;
+          background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(0,0,0,0.9));
+          border: 1px solid rgba(212,175,55,0.3);
+      }
+
+      .service-card:hover {
+          transform: translateY(-5px);
+          border-color: #D4AF37;
+          box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+      }
+
+      .mobile-menu {
+          transform: translateX(100%);
+          transition: transform 0.3s ease;
+      }
+
+      .mobile-menu.active {
+          transform: translateX(0);
+      }
+
+      .scrolling-logos {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          z-index: 1;
+          pointer-events: none;
+      }
+
+      .logo-column {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          animation: scrollUp var(--scroll-speed, 20s) linear infinite;
+          gap: 3rem;
+      }
+
+      @keyframes scrollUp {
+          0% { transform: translateY(100vh); }
+          100% { transform: translateY(-100%); }
+      }
+
+      .logo-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(212, 175, 55, 0.1);
+          border-radius: 12px;
+          padding: 1rem;
+          backdrop-filter: blur(10px);
+          opacity: 0.6;
+          transition: all 0.3s ease;
+          min-height: 80px;
+          width: 160px;
+      }
+
+      .logo-item:hover {
+          opacity: 0.9;
+          transform: scale(1.05);
+          border-color: rgba(212, 175, 55, 0.3);
+      }
+
+      .logo-text {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #D4AF37;
+          text-align: center;
+      }
+
+      .hero-content {
+          position: relative;
+          z-index: 2;
+      }
+
+      @media (max-width: 768px) {
+          .logo-column {
+              gap: 2rem;
+          }
+
+          .logo-item {
+              width: 120px;
+              min-height: 60px;
+              padding: 0.75rem;
+          }
+
+          .logo-text {
+              font-size: 0.8rem;
+          }
+      }
+    </style>
+</head>
+<body class="bg-secondary text-white">
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="logo-animation text-center flex flex-col items-center">
+            <img src="public/lms logo transparent.png" alt="LMS Logo" class="h-12 w-12 mb-4">
+            <!-- <img src="public/lms logo transparent.png" alt="LMS Logo" class="h-24 w-24"> -->
+            <div class="text-xl text-primary opacity-80">Limited Manpower services</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-secondary/95 backdrop-blur-sm z-50 border-b border-primary/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center">
+    <a>
+        <img class="w-10 h-10 rounded-full" src="public/lms logo transparent.png" alt="Avatar">
+        <!-- <div class="text-2xl font-['Pacifico'] text-primary">LMS</div> -->
+    </a>
+</div>
+<div class="hidden md:block">
+<div class="ml-10 flex items-baseline space-x-8">
+<a href="about-Us.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">About Us</a>
+<a href="services.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Services</a>
+<a href="gallery.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Gallery</a>
+<a href="careers.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Careers</a>
+<a href="contact-Us.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Contact</a>
+</div>
+</div>
+<div class="hidden md:block">
+<button onclick="window.location.href='contact-Us.html'"
+class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-secondary transition-all duration-300 px-6 py-2 !rounded-button whitespace-nowrap">
+Get Quote
+</button>
+</div>
+<div class="md:hidden">
+<button id="mobileMenuBtn" class="text-white hover:text-primary transition-colors duration-300">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu z-100 fixed top-0 right-0 h-full w-64 bg-secondary border-l border-primary/20 md:hidden">
+<div class="p-4">
+<button id="closeMobileMenu" class="text-white hover:text-primary transition-colors duration-300 mb-8">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-close-line ri-lg"></i>
+</div>
+</button>
+<div class="space-y-4">
+<a href="about-Us.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">About Us</a>
+<a href="services.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">Services</a>
+<a href="gallery.html"class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Gallery</a>
+<a href="careers.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">Careers</a>
+<a href="contact-Us.html" class="block text-white hover:text-primary transition-colors duration-300 py-2">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+<!-- <div class="scrolling-logos" id="scrollingLogos"> 
+
+               <div class="logo-column" style="right: 2%; animation-delay: -12s;">
+
+              <div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/ant.png" alt="ant" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">ant</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/cadmax.png" alt="cadmax" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">cadmax</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/drs.png" alt="drs" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">drs</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/dsc.png" alt="dsc" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">dsc</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/elias.png" alt="elias" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">elias</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/fine.png" alt="fine" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">fine</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/galva.png" alt="galva" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">galva</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/glodai.png" alt="glodai" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">glodai</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/hwaseung.png" alt="hwaseung" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">hwaseung</div>
+         </div>
+
+               </div>
+      
+               <div class="logo-column" style="right: 15%; animation-delay: -7s;">
+
+         <div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/hyundai-glovis.png" alt="hyundai-glovis" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">hyundai-glovis</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/jji.png" alt="jji" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">JJi</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/ksh.png" alt="ksh" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">Ksh</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/kupara.png" alt="kupara" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">kupara</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/kwang-sung.png" alt="kwang-sung" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">kwang-sung</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/motherson.png" alt="motherson" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">Motherson</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/nahars.png" alt="nahars" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">Nahars</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/qudecs.png" alt="qudecs" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">qudecs</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/seoyon-e-hwa.png" alt="seoyon-e-hwa" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">seoyon-e-hwa</div>
+         </div>
+
+               </div>
+
+               <div class="logo-column" style="right: 30%; animation-delay: -2s;">
+
+<div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/shp.png" alt="Shp" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">Shp</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/sllumax.png" alt="sllumax" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">sllumax</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/sungwoo-hitech.png" alt="sungwoo-hitech" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">sungwoo-hitech</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/tafe.png" alt="Tafe" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">Tafe</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/tata.png" alt="tata" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">Tata</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/tlyche.png" alt="Tlyche" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">Tlyche</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/ui.png" alt="United Industries" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">United Industries</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/youngshin-india.png" alt="youngshin-india" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">youngshin-india</div>
+         </div><div class="logo-item flex items-center">
+  <div class="w-12 h-12 flex items-center justify-center mr-3">
+    <img src="public/logos/youngshin-automotive.png" alt="younshin-automotive" class="max-h-full max-w-full object-contain" />
+  </div>
+
+  <div class="logo-text">younshin-automotive</div>
+         </div>
+
+        
+               </div>
+</div> -->
+        
+      
+
+        <div class="max-w-7xl mx-auto px-4 z-50 sm:px-6 lg:px-8 w-full">
+            <div class="parallax">
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        <span class="text-primary">Premium</span><br>
+                        <span id="typingText" class="typing-animation">Manpower Solutions</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">
+                        Connecting exceptional talent with outstanding opportunities through innovative outsourcing solutions.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick=window.location.href='services.html' class="bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-8 py-4 !rounded-button font-semibold whitespace-nowrap">
+                            Explore Services
+                        </button>
+                        <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-secondary transition-all duration-300 px-8 py-4 !rounded-button font-semibold whitespace-nowrap">
+                            View Portfolio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Ticker -->
+    <div class="bg-secondary border-y border-primary/30 py-3 overflow-hidden">
+        <div class="ticker-scroll whitespace-nowrap">
+            <span class="text-primary font-semibold mr-8">LATEST NEWS:</span>
+            <span class="mr-12">LMS Successfully Placed 500+ Professionals This Quarter</span>
+            <span class="text-primary mr-4">•</span>
+            <span class="mr-12">New Partnership with Fortune 500 Companies Announced</span>
+            <span class="text-primary mr-4">•</span>
+            <span class="mr-12">LMS Wins "Best Outsourcing Partner 2024" Award</span>
+            <span class="text-primary mr-4">•</span>
+            <span class="mr-12">Expanding Operations to 15 New Cities Across the Region</span>
+            <span class="text-primary mr-4">•</span>
+            <span class="mr-12">Advanced AI-Powered Talent Matching System Launched</span>
+        </div>
+    </div>
+
+    <!-- Our Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-secondary to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Our <span class="text-primary">Services</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Comprehensive manpower solutions tailored to meet your business needs with excellence and precision.
+                </p>
+            </div>
+            
+            <!-- Stats Counter -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+                        <span class="counter" data-target="150">0</span>+
+                    </div>
+                    <div class="text-gray-300">Happy Clients</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+                        <span class="counter" data-target="2500">0</span>+
+                    </div>
+                    <div class="text-gray-300">Workers Placed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+                        <span class="counter" data-target="98">0</span>%
+                    </div>
+                    <div class="text-gray-300">Success Rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+                        <span class="counter" data-target="8">0</span>+
+                    </div>
+                    <div class="text-gray-300">Years Experience</div>
+                </div>
+            </div>
+            
+            <!-- Service Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card p-8 rounded-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-lg mb-6">
+                        <i class="ri-team-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Staff Augmentation</h3>
+                    <p class="text-gray-300 mb-6">
+                        Enhance your team with skilled professionals who integrate seamlessly into your existing workflow and culture.
+                    </p>
+                    <button onclick="window.location.href='services/staff-Agumentation.html'"      class="text-primary hover:text-primary/80 transition-colors duration-300 font-semibold">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card p-8 rounded-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-lg mb-6">
+                        <i class="ri-building-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Project Outsourcing</h3>
+                    <p class="text-gray-300 mb-6">
+                        Complete project management and execution with dedicated teams tailored to your specific requirements.
+                    </p>
+                    <button onclick="window.location.href='services/ProjectOutsourcing.html'" class="text-primary hover:text-primary/80 transition-colors duration-300 font-semibold">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card p-8 rounded-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-lg mb-6">
+                        <i class="ri-search-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Talent Acquisition</h3>
+                    <p class="text-gray-300 mb-6">
+                        Strategic recruitment services to find and secure top-tier talent for your organization's growth.
+                    </p>
+                    <button onclick="window.location.href='services/TalentAcquisition.html'"   class="text-primary hover:text-primary/80 transition-colors duration-300 font-semibold">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card p-8 rounded-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-lg mb-6">
+                        <i class="ri-graduation-cap-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Training & Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Comprehensive training programs to upskill your workforce and enhance productivity.
+                    </p>
+                    <button onclick="window.location.href='services/Training&Development.html'" class="text-primary hover:text-primary/80 transition-colors duration-300 font-semibold">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card p-8 rounded-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-lg mb-6">
+                        <i class="ri-settings-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">HR Consulting</h3>
+                    <p class="text-gray-300 mb-6">
+                        Expert HR advisory services to optimize your human resources strategies and policies.
+                    </p>
+                    <button onclick="window.location.href='services/hr-Consulting.html'" class="text-primary hover:text-primary/80 transition-colors duration-300 font-semibold">
+                        Learn More →
+                    </button>
+                </div>
+                
+                <div class="service-card p-8 rounded-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/20 rounded-lg mb-6">
+                        <i class="ri-shield-check-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Compliance Management</h3>
+                    <p class="text-gray-300 mb-6">
+                        Ensure full regulatory compliance with our comprehensive workforce management solutions.
+                    </p>
+                    <button onclick="window.location.href='services/complience-Management.html'" class="text-primary hover:text-primary/80 transition-colors duration-300 font-semibold">
+                        Learn More →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        About <span class="text-primary">LMS</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-6">
+                        With over 8 years of excellence in manpower outsourcing, LMS has established itself as a trusted partner for businesses seeking premium talent solutions.
+                    </p>
+                    <p class="text-gray-300 mb-8">
+                        Our commitment to quality, innovation, and client satisfaction has made us the preferred choice for Fortune 500 companies and growing enterprises alike. We combine cutting-edge technology with personalized service to deliver exceptional results.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span>ISO 9001:2015 Certified Quality Management</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span>24/7 Client Support and Consultation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span>Advanced AI-Powered Talent Matching</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://readdy.ai/api/search-image?query=professional%20corporate%20team%20meeting%20in%20modern%20office%20with%20diverse%20business%20professionals%20discussing%20strategies%20around%20conference%20table%20with%20elegant%20lighting%20and%20premium%20office%20environment&width=600&height=400&seq=about-img&orientation=landscape" alt="About LMS" class="rounded-lg shadow-2xl object-cover w-full h-96">
+                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent rounded-lg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Our <span class="text-primary">Gallery</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Explore our professional environment, events, and successful partnerships through our comprehensive gallery.
+                </p>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="gallery-filter active bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-6 py-3 !rounded-button font-semibold whitespace-nowrap" data-filter="all">
+                        All
+                    </button>
+                    <button class="gallery-filter bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-secondary transition-all duration-300 px-6 py-3 !rounded-button font-semibold whitespace-nowrap" data-filter="events">
+                        Events
+                    </button>
+                    <button class="gallery-filter bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-secondary transition-all duration-300 px-6 py-3 !rounded-button font-semibold whitespace-nowrap" data-filter="office">
+                        Office
+                    </button>
+                    <button class="gallery-filter bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-secondary transition-all duration-300 px-6 py-3 !rounded-button font-semibold whitespace-nowrap" data-filter="training">
+                        Training
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div id="galleryGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item events cursor-pointer group" data-category="events">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=corporate%20business%20event%20with%20professionals%20networking%20in%20elegant%20venue%20with%20golden%20lighting%20and%20premium%20atmosphere&width=400&height=300&seq=gallery-1&orientation=landscape" alt="Corporate Event" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Annual Business Summit</h3>
+                                <p class="text-gray-300">Corporate networking event</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item office cursor-pointer group" data-category="office">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20corporate%20office%20interior%20with%20professional%20workspace%20featuring%20black%20and%20gold%20design%20elements%20elegant%20furniture%20and%20premium%20lighting&width=400&height=300&seq=gallery-2&orientation=landscape" alt="Office Space" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Executive Office</h3>
+                                <p class="text-gray-300">Premium workspace design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item training cursor-pointer group" data-category="training">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=professional%20training%20session%20with%20business%20people%20in%20modern%20conference%20room%20with%20presenter%20and%20audience%20learning%20corporate%20skills&width=400&height=300&seq=gallery-3&orientation=landscape" alt="Training Session" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Skills Development</h3>
+                                <p class="text-gray-300">Professional training program</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item events cursor-pointer group" data-category="events">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=corporate%20award%20ceremony%20with%20professionals%20celebrating%20achievements%20in%20elegant%20venue%20with%20golden%20accents%20and%20premium%20atmosphere&width=400&height=300&seq=gallery-4&orientation=landscape" alt="Award Ceremony" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Excellence Awards</h3>
+                                <p class="text-gray-300">Recognition ceremony</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item office cursor-pointer group" data-category="office">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20corporate%20meeting%20room%20with%20glass%20walls%20professional%20furniture%20and%20elegant%20black%20gold%20interior%20design%20for%20business%20discussions&width=400&height=300&seq=gallery-5&orientation=landscape" alt="Meeting Room" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Conference Room</h3>
+                                <p class="text-gray-300">Strategic meeting space</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item training cursor-pointer group" data-category="training">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=corporate%20workshop%20with%20business%20professionals%20learning%20new%20skills%20in%20modern%20training%20facility%20with%20interactive%20presentation%20and%20group%20activities&width=400&height=300&seq=gallery-6&orientation=landscape" alt="Workshop" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Leadership Workshop</h3>
+                                <p class="text-gray-300">Executive development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+        <div class="relative max-w-4xl max-h-full">
+            <button id="closeModal" class="absolute top-4 right-4 text-white hover:text-primary transition-colors duration-300 z-10">
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <i class="ri-close-line ri-2x"></i>
+                </div>
+            </button>
+            <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+        </div>
+    </div>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Career <span class="text-primary">Opportunities</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Join our dynamic team and build your career with one of the industry's leading manpower outsourcing companies.
+                </p>
+                
+                <!-- Job Search -->
+                <div class="max-w-2xl mx-auto mb-12">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400">
+                                <i class="ri-search-line"></i>
+                            </div>
+                        </div>
+                        <input type="text" id="jobSearch" placeholder="Search jobs by title or location..." class="w-full pl-12 pr-4 py-4 bg-secondary border-2 border-primary/30 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Job Listings -->
+            <div id="jobListings" class="space-y-6">
+                <div class="job-item bg-secondary border border-primary/30 rounded-lg p-6 hover:border-primary transition-colors duration-300" data-title="senior hr manager" data-location="new york">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Senior HR Manager</h3>
+                            <div class="flex flex-wrap gap-4 text-gray-300 mb-4">
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-map-pin-line"></i>
+                                    </div>
+                                    New York, NY
+                                </span>
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-time-line"></i>
+                                    </div>
+                                    Full-time
+                                </span>
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-money-dollar-circle-line"></i>
+                                    </div>
+                                    $80,000 - $120,000
+                                </span>
+                            </div>
+                            <p class="text-gray-300">
+                                Lead HR operations and strategic initiatives for our growing organization. Requires 5+ years of HR management experience.
+                            </p>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6">
+                            <button class="apply-btn bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-6 py-3 !rounded-button font-semibold whitespace-nowrap">
+                                Apply Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job-item bg-secondary border border-primary/30 rounded-lg p-6 hover:border-primary transition-colors duration-300" data-title="business development executive" data-location="chicago">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Business Development Executive</h3>
+                            <div class="flex flex-wrap gap-4 text-gray-300 mb-4">
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-map-pin-line"></i>
+                                    </div>
+                                    Chicago, IL
+                                </span>
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-time-line"></i>
+                                    </div>
+                                    Full-time
+                                </span>
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-money-dollar-circle-line"></i>
+                                    </div>
+                                    $60,000 - $90,000
+                                </span>
+                            </div>
+                            <p class="text-gray-300">
+                                Drive business growth through client acquisition and relationship management. Perfect for ambitious sales professionals.
+                            </p>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6">
+                            <button class="apply-btn bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-6 py-3 !rounded-button font-semibold whitespace-nowrap">
+                                Apply Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job-item bg-secondary border border-primary/30 rounded-lg p-6 hover:border-primary transition-colors duration-300" data-title="talent acquisition specialist" data-location="los angeles">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Talent Acquisition Specialist</h3>
+                            <div class="flex flex-wrap gap-4 text-gray-300 mb-4">
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-map-pin-line"></i>
+                                    </div>
+                                    Los Angeles, CA
+                                </span>
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-time-line"></i>
+                                    </div>
+                                    Full-time
+                                </span>
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-money-dollar-circle-line"></i>
+                                    </div>
+                                    $55,000 - $75,000
+                                </span>
+                            </div>
+                            <p class="text-gray-300">
+                                Source and recruit top talent for our clients. Ideal for recruiters passionate about connecting people with opportunities.
+                            </p>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6">
+                            <button class="apply-btn bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-6 py-3 !rounded-button font-semibold whitespace-nowrap">
+                                Apply Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job-item bg-secondary border border-primary/30 rounded-lg p-6 hover:border-primary transition-colors duration-300" data-title="project manager" data-location="miami">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Project Manager</h3>
+                            <div class="flex flex-wrap gap-4 text-gray-300 mb-4">
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-map-pin-line"></i>
+                                    </div>
+                                    Miami, FL
+                                </span>
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-time-line"></i>
+                                    </div>
+                                    Full-time
+                                </span>
+                                <span class="flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-money-dollar-circle-line"></i>
+                                    </div>
+                                    $70,000 - $100,000
+                                </span>
+                            </div>
+                            <p class="text-gray-300">
+                                Oversee client projects from initiation to completion. Requires strong leadership and organizational skills.
+                            </p>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6">
+                            <button class="apply-btn bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-6 py-3 !rounded-button font-semibold whitespace-nowrap">
+                                Apply Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+        <div class="bg-secondary rounded-lg p-8 max-w-2xl w-full max-h-full overflow-y-auto">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold">Apply for Position</h3>
+                <button id="closeApplicationModal" class="text-white hover:text-primary transition-colors duration-300">
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <i class="ri-close-line ri-lg"></i>
+                    </div>
+                </button>
+            </div>
+            
+            <form id="applicationForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Full Name *</label>
+                        <input type="text" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email Address *</label>
+                        <input type="email" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300">
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Phone Number *</label>
+                        <input type="tel" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Resume/CV *</label>
+                        <input type="file" accept=".pdf,.doc,.docx" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-2">Cover Letter / Message</label>
+                    <textarea rows="4" class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300" placeholder="Tell us why you're interested in this position..."></textarea>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button type="submit" class="bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-8 py-3 !rounded-button font-semibold whitespace-nowrap">
+                        Submit Application
+                    </button>
+                    <button type="button" id="cancelApplication" class="bg-transparent border-2 border-gray-600 text-white hover:bg-gray-600 transition-all duration-300 px-8 py-3 !rounded-button font-semibold whitespace-nowrap">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Get In <span class="text-primary">Touch</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ready to transform your workforce? Contact us today to discuss your manpower outsourcing needs.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-4 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Headquarters</h4>
+                                <p class="text-gray-300">123 Business Plaza, Suite 500<br>penukonda, NY 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-4 mt-1">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone</h4>
+                                <p class="text-gray-300">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-4 mt-1">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-gray-300">info@lms-solutions.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary mr-4 mt-1">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Business Hours</h4>
+                                <p class="text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">First Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Last Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email Address *</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message *</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 bg-gray-800 border border-primary/30 rounded-lg text-white focus:border-primary focus:outline-none transition-colors duration-300" placeholder="Tell us about your requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-secondary hover:bg-primary/90 transition-all duration-300 px-8 py-4 !rounded-button font-semibold whitespace-nowrap">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-primary/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-['Pacifico'] text-primary mb-4">LMS</div>
+                    <p class="text-gray-300 mb-6">
+                        Leading the future of manpower outsourcing with innovative solutions and exceptional service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://twitter.com" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-twitter-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="services/staff-Augmentation.html" class="hover:text-primary transition-colors duration-300">Staff Augmentation</a></li>
+                        <li><a href="services/ProjectOutsourcing.html" class="hover:text-primary transition-colors duration-300">Project Outsourcing</a></li>
+                        <li><a href="services//TalentAcquisition.html" class="hover:text-primary transition-colors duration-300">Talent Acquisition</a></li>
+                        <li><a href="services/hr-Consulting.html" class="hover:text-primary transition-colors duration-300">HR Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="about-Us.html" class="hover:text-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-primary transition-colors duration-300">Careers</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact-Us.html" class="hover:text-primary transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>123 Business Plaza, Suite 500</p>
+                        <p>penukonnda, NY 10001</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Email: info@lms-solutions.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary/20 mt-8 pt-8 text-center text-gray-400">
+<p class="text-gray-400 text-sm">
+© <span id="current-year">2024</span> LMS Corporate Services. All rights reserved.
+</p>            </div>
+        </div>
+    </footer>
+
+    <script id="splash-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const splashScreen = document.getElementById('splashScreen');
+                splashScreen.classList.add('fade-out');
+                setTimeout(function() {
+                    splashScreen.style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+    </script>
+
+    <script id="current-year">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+    <script id="navigation-mobile">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+            });
+            
+            closeMobileMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+            
+            // Close mobile menu when clicking on nav links
+            const mobileNavLinks = mobileMenu.querySelectorAll('a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+    <script id="typing-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingText = document.getElementById('typingText');
+            const texts = [
+                'Manpower Solutions',
+                'Talent Acquisition',
+                'Business Excellence',
+                'Workforce Innovation'
+            ];
+            let currentTextIndex = 0;
+            let currentCharIndex = 0;
+            let isDeleting = false;
+            
+            function typeText() {
+                const currentText = texts[currentTextIndex];
+                
+                if (isDeleting) {
+                    typingText.textContent = currentText.substring(0, currentCharIndex - 1);
+                    currentCharIndex--;
+                } else {
+                    typingText.textContent = currentText.substring(0, currentCharIndex + 1);
+                    currentCharIndex++;
+                }
+                
+                let typeSpeed = isDeleting ? 100 : 150;
+                
+                if (!isDeleting && currentCharIndex === currentText.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    typeSpeed = 500;
+                }
+                
+                setTimeout(typeText, typeSpeed);
+            }
+            
+            typeText();
+        });
+    </script>
+
+    <script id="parallax-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                
+                parallaxElements.forEach(element => {
+                    element.style.setProperty('--scroll-y', rate + 'px');
+                });
+            });
+        });
+    </script>
+
+    <script id="counter-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter');
+            const observerOptions = {
+                threshold: 0.7
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const increment = target / 100;
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                counter.textContent = Math.ceil(current);
+                                setTimeout(updateCounter, 20);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+            
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+    </script>
+
+    <script id="gallery-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.gallery-filter');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const galleryModal = document.getElementById('galleryModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
+            
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary', 'text-secondary');
+                        btn.classList.add('bg-transparent', 'border-2', 'border-primary', 'text-primary');
+                    });
+                    
+                    this.classList.add('active', 'bg-primary', 'text-secondary');
+                    this.classList.remove('bg-transparent', 'border-2', 'border-primary', 'text-primary');
+                    
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Modal functionality
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    modalImage.src = img.src;
+                    modalImage.alt = img.alt;
+                    galleryModal.classList.remove('hidden');
+                    galleryModal.classList.add('flex');
+                });
+            });
+            
+            closeModal.addEventListener('click', function() {
+                galleryModal.classList.add('hidden');
+                galleryModal.classList.remove('flex');
+            });
+            
+            galleryModal.addEventListener('click', function(e) {
+                if (e.target === galleryModal) {
+                    galleryModal.classList.add('hidden');
+                    galleryModal.classList.remove('flex');
+                }
+            });
+        });
+    </script>
+
+    <script id="job-search-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const jobSearch = document.getElementById('jobSearch');
+            const jobItems = document.querySelectorAll('.job-item');
+            const applyButtons = document.querySelectorAll('.apply-btn');
+            const applicationModal = document.getElementById('applicationModal');
+            const closeApplicationModal = document.getElementById('closeApplicationModal');
+            const cancelApplication = document.getElementById('cancelApplication');
+            const applicationForm = document.getElementById('applicationForm');
+            
+            // Job search functionality
+            jobSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                jobItems.forEach(item => {
+                    const title = item.getAttribute('data-title');
+                    const location = item.getAttribute('data-location');
+                    
+                    if (title.includes(searchTerm) || location.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Application modal functionality
+            applyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    applicationModal.classList.remove('hidden');
+                    applicationModal.classList.add('flex');
+                });
+            });
+            
+            closeApplicationModal.addEventListener('click', function() {
+                applicationModal.classList.add('hidden');
+                applicationModal.classList.remove('flex');
+            });
+            
+            cancelApplication.addEventListener('click', function() {
+                applicationModal.classList.add('hidden');
+                applicationModal.classList.remove('flex');
+            });
+            
+            applicationModal.addEventListener('click', function(e) {
+                if (e.target === applicationModal) {
+                    applicationModal.classList.add('hidden');
+                    applicationModal.classList.remove('flex');
+                }
+            });
+            
+            // Form submission
+            applicationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Application submitted successfully! We will contact you soon.');
+                applicationModal.classList.add('hidden');
+                applicationModal.classList.remove('flex');
+                this.reset();
+            });
+        });
+    </script>
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
